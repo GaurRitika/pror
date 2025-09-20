@@ -10,7 +10,7 @@ export const Header = () => {
               <img src={Logo} alt="Logo" className="h-8 w-8 object-contain" />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">V</h1>
+              <h1 className="text-xl font-bold tracking-tight">EdTech</h1>
               <p className="text-sm text-muted-foreground -mt-1">Resume Reviewer</p>
             </div>
           </div>
