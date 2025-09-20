@@ -5,7 +5,7 @@
 ---
 
 ## 🔗 Live Demo
-[https://v-ai-powered-resume-reviewer.vercel.app/](https://v-ai-powered-resume-reviewer.vercel.app/)  
+[https://v-ai-powered-resume-reviewer.vercel.app/](will come soon)  
 
 ---
 
@@ -41,8 +41,8 @@
 ### Installation & Local Setup
 ```bash
 # Clone the repository
-git clone https://github.com/Vizz27/V-AI-Powered-Resume-Reviewer.git
-cd V-AI-Powered-Resume-Reviewer
+git clone [https://github.com/Vizz27/V-AI-Powered-Resume-Reviewer.git](https://github.com/GaurRitika/pror)
+cd Edtechresumereview
 
 # Install dependencies
 npm install
