@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/footer";
 import { UploadZone } from "@/components/ui/upload-zone";
 import { ScoreCard } from "@/components/analysis/score-card";
 import { FeedbackList, FeedbackItem } from "@/components/analysis/feedback-list";
+import { PremiumUpgrade } from "@/components/premium/premium-upgrade";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -92,8 +93,9 @@ const Index = () => {
     
     readabilityScore = Math.min(Math.max(readabilityScore, 0), 100);
     
-    // Calculate overall score
-    const overallScore = Math.round((atsScore + keywordScore + readabilityScore) / 3);
+    // Calculate overall score (cap at 95% for free users)
+    const rawOverallScore = Math.round((atsScore + keywordScore + readabilityScore) / 3);
+    const overallScore = Math.min(rawOverallScore, 95); // Cap free analysis at 95%
     
     // Generate dynamic feedback
     const feedback: FeedbackItem[] = [];
@@ -183,6 +185,18 @@ const Index = () => {
         title: "Strong Keyword Match",
         description: "Your resume aligns well with the job requirements",
         priority: "low"
+      });
+      feedbackId++;
+    }
+    
+    // Add premium teaser feedback
+    if (overallScore >= 90) {
+      feedback.push({
+        id: feedbackId.toString(),
+        type: "info",
+        title: "Premium Analysis Available",
+        description: "Unlock advanced insights including salary optimization, industry-specific recommendations, and interview preparation tips.",
+        priority: "medium"
       });
       feedbackId++;
     }
@@ -434,6 +448,13 @@ const Index = () => {
                       <div className="text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse mb-2">
                         {analysisResults.overallScore}%
                       </div>
+                      {analysisResults.overallScore >= 95 && (
+                        <div className="absolute -top-2 -right-2">
+                          <div className="px-2 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full animate-pulse">
+                            Free Limit
+                          </div>
+                        </div>
+                      )}
                       <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl opacity-50"></div>
                     </div>
                     
@@ -516,6 +537,9 @@ const Index = () => {
                     <FeedbackList items={analysisResults.feedback} />
                   </CardContent>
                 </Card>
+
+                {/* Premium Upgrade Component */}
+                <PremiumUpgrade currentScore={analysisResults.overallScore} className="mt-8" />
               </> : <Card className="relative overflow-hidden bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border/50 shadow-large">
                 {/* Animated background elements */}
                 <div className="absolute inset-0">
