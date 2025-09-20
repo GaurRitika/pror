@@ -448,13 +448,14 @@ const Index = () => {
                       <div className="text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse mb-2">
                         {analysisResults.overallScore}%
                       </div>
+<
                       {analysisResults.overallScore >= 95 && (
                         <div className="absolute -top-2 -right-2">
                           <div className="px-2 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full animate-pulse">
                             Free Limit
                           </div>
                         </div>
-                      )}
+                      
                       <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl opacity-50"></div>
                     </div>
                     
@@ -538,8 +539,10 @@ const Index = () => {
                   </CardContent>
                 </Card>
 
+
                 {/* Premium Upgrade Component */}
                 <PremiumUpgrade currentScore={analysisResults.overallScore} className="mt-8" />
+
               </> : <Card className="relative overflow-hidden bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border/50 shadow-large">
                 {/* Animated background elements */}
                 <div className="absolute inset-0">

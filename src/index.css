@@ -171,6 +171,7 @@ All colors MUST be HSL.
   }
 }
 
+
 @keyframes bounce-slow {
   0%, 100% {
     transform: translateY(0);
@@ -200,6 +201,7 @@ All colors MUST be HSL.
   }
 }
 
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -215,6 +217,7 @@ All colors MUST be HSL.
 
 .animate-shimmer {
   animation: shimmer 2s infinite;
+
 }
 
 .animate-bounce-slow {
@@ -227,4 +230,3 @@ All colors MUST be HSL.
 
 .animate-slide-in-bottom {
   animation: slideInFromBottom 0.8s ease-out forwards;
-}
