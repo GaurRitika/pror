@@ -1,7 +1,8 @@
 import { Linkedin, Github, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 export const Footer = () => {
-  return <footer className="bg-card border-t border-border mt-16">
+  return (
+   <footer className="bg-card border-t border-border mt-16">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Column - Brand and Social */}
@@ -17,7 +18,7 @@ export const Footer = () => {
             </p>
             
             <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon" asChild className="hover:bg-primary/10 hover:text-primary">
+              <Button variant="ghost" size="icon" asChild className="hover:bg-primary/10 hover:text-primary">
                 <a href="https://www.linkedin.com/in/ritikagaur21/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
                   <Linkedin className="h-5 w-5" />
                 </a>
@@ -42,9 +43,11 @@ export const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-border mt-8 pt-6 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 EdTech AI Resume Reviewer. All rights reserved.
+            © 2025 Resume Reviewer. All rights reserved.
           </p>
+          </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+    );
 };
