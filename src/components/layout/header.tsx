@@ -1,4 +1,4 @@
-import vLogo from "@/assets/v-logo.png";
+import vLogo from "@/assets/logo.png";
 
 export const Header = () => {
   return (
@@ -7,7 +7,7 @@ export const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 bg-background rounded-lg shadow-medium border">
-              <img src={vLogo} alt="V Logo" className="h-8 w-8 object-contain" />
+              <img src={Logo} alt="Logo" className="h-8 w-8 object-contain" />
             </div>
             <div>
               <h1 className="text-xl font-bold tracking-tight">V</h1>
