@@ -5,7 +5,7 @@
 ---
 
 ## 🔗 Live Demo
-[soon](https://resume-review-five.vercel.app/)
+(https://resume-review-five.vercel.app/)](https://resume-review-five.vercel.app/)
 
 ---
 
