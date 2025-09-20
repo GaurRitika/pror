@@ -5,7 +5,7 @@
 ---
 
 ## 🔗 Live Demo
-[https://v-ai-powered-resume-reviewer.vercel.app/](will come soon)  
+soon
 
 ---
 
