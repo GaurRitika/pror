@@ -2,6 +2,9 @@ import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
+import { PaymentService } from "@/services/payment";
+import { useState } from "react";
 import { 
   Crown, 
   Zap, 
@@ -12,15 +15,20 @@ import {
   Target,
   TrendingUp,
   Shield,
-  Rocket
+  Rocket,
+  Loader2,
+  CreditCard
 } from "lucide-react";
 
 interface PremiumUpgradeProps {
   currentScore: number;
   className?: string;
+  userEmail?: string;
 }
 
-export const PremiumUpgrade = ({ currentScore, className }: PremiumUpgradeProps) => {
+export const PremiumUpgrade = ({ currentScore, className, userEmail }: PremiumUpgradeProps) => {
+  const [isProcessing, setIsProcessing] = useState(false);
+  const { toast } = useToast();
   const premiumFeatures = [
     {
       icon: <Target className="h-4 w-4" />,
@@ -44,9 +52,46 @@ export const PremiumUpgrade = ({ currentScore, className }: PremiumUpgradeProps)
     }
   ];
 
-  const handleUpgrade = () => {
-    // TODO: Integrate with Stripe later
-    console.log("Upgrade to premium clicked");
+  const handleUpgrade = async () => {
+    if (isProcessing) return;
+    
+    setIsProcessing(true);
+    
+    try {
+      toast({
+        title: "Redirecting to payment...",
+        description: "Please wait while we set up your secure payment.",
+      });
+
+      // For demo purposes, we'll simulate the payment
+      // In production, replace this with PaymentService.redirectToCheckout(userEmail)
+      const result = await PaymentService.simulatePayment();
+      
+      if (result.success) {
+        toast({
+          title: "🎉 Payment Successful!",
+          description: "Welcome to Premium! Your advanced analysis is now available.",
+        });
+        
+        // In a real app, you'd redirect to success page or update the UI
+        // window.location.href = '/premium-success';
+      } else {
+        toast({
+          title: "Payment Failed",
+          description: result.error || "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      toast({
+        title: "Payment Error",
+        description: "Unable to process payment. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   return (
@@ -163,19 +208,32 @@ export const PremiumUpgrade = ({ currentScore, className }: PremiumUpgradeProps)
         <div className="space-y-4">
           <Button 
             onClick={handleUpgrade}
-            className="w-full relative overflow-hidden bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 hover:from-amber-600 hover:via-orange-600 hover:to-rose-600 text-white font-bold py-4 text-lg shadow-lg hover:shadow-amber-500/25 transition-all duration-300 transform hover:scale-[1.02] group"
+            disabled={isProcessing}
+            className="w-full relative overflow-hidden bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 hover:from-amber-600 hover:via-orange-600 hover:to-rose-600 text-white font-bold py-4 text-lg shadow-lg hover:shadow-amber-500/25 transition-all duration-300 transform hover:scale-[1.02] group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             <div className="relative z-10 flex items-center justify-center gap-3">
-              <Crown className="h-5 w-5 group-hover:animate-bounce" />
-              <span>Upgrade to Premium - Only $2</span>
-              <Zap className="h-5 w-5 group-hover:animate-pulse" />
+              {isProcessing ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  <span>Processing Payment...</span>
+                  <CreditCard className="h-5 w-5 animate-pulse" />
+                </>
+              ) : (
+                <>
+                  <Crown className="h-5 w-5 group-hover:animate-bounce" />
+                  <span>Upgrade to Premium - Only $2</span>
+                  <Zap className="h-5 w-5 group-hover:animate-pulse" />
+                </>
+              )}
             </div>
             
             {/* Animated background effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-rose-500/20 via-pink-500/20 to-orange-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             {/* Shimmer effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            {!isProcessing && (
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            )}
           </Button>
           
           <div className="text-center space-y-2">
