@@ -10,8 +10,8 @@ soon
 ---
 
 ## 📸 Screenshot
-![App Screenshot](<img width="1843" height="905" alt="image" src="https://github.com/user-attachments/assets/c800937c-47ae-4de7-8467-9bdb4144e033" />
-)
+<img width="1883" height="839" alt="image" src="https://github.com/user-attachments/assets/6b936541-d2b5-41b5-a82a-7cbb0b5b8c58" />
+
 
 ---
 
