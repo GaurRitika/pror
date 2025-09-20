@@ -41,7 +41,7 @@
 ### Installation & Local Setup
 ```bash
 # Clone the repository
-git clone [https://github.com/Vizz27/V-AI-Powered-Resume-Reviewer.git](https://github.com/GaurRitika/pror)
+git clone (https://github.com/GaurRitika/pror)
 cd Edtechresumereview
 
 # Install dependencies
