@@ -272,95 +272,95 @@ const Index = () => {
       setIsAnalyzing(false);
     }
   };
-  return <div className="min-h-screen bg-subtle-gradient">
+  return <div className="min-h-screen bg-gradient-background particles-bg">
       <Header />
       
-      <main className="container mx-auto px-6 py-8">
-        {/* Enhanced Hero Section */}
-        <div className="text-center mb-16 relative">
-          {/* Floating background elements */}
+      <main className="container mx-auto px-6 py-12">
+        {/* Premium Hero Section */}
+        <div className="text-center mb-20 relative">
+          {/* Subtle floating particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-1/4 w-32 h-32 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-32 right-1/4 w-40 h-40 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-10 left-1/4 w-32 h-32 bg-primary/8 rounded-full blur-3xl animate-gentle-float"></div>
+            <div className="absolute top-32 right-1/4 w-40 h-40 bg-secondary/6 rounded-full blur-3xl animate-gentle-float" style={{ animationDelay: '3s' }}></div>
           </div>
           
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20 backdrop-blur-sm">
-              <Brain className="h-5 w-5 text-primary animate-pulse" />
-              <span className="text-sm font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                🚀 AI-Powered Resume Analysis
+          <div className="relative z-10 animate-fade-in-up">
+            <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-gradient-subtle rounded-full border border-border-accent backdrop-blur-sm hover-glow">
+              <Brain className="h-5 w-5 text-primary animate-subtle-pulse" />
+              <span className="text-sm font-bold bg-gradient-primary bg-clip-text text-transparent">
+                AI-Powered Resume Analysis
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight">
               Level Up Your
               <br />
-              <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse">
+              <span className="bg-gradient-primary bg-clip-text text-transparent animate-gradient-shift">
                 Developer Career
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-              🎯 Get instant, actionable feedback on your resume with our advanced AI system.
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-10 leading-relaxed">
+              Get instant, actionable feedback on your resume with our advanced AI system.
               <br />
-              <span className="text-lg text-muted-foreground/80">
+              <span className="text-lg text-foreground-muted">
                 Optimize for ATS systems, improve keyword matching, and land your dream tech job.
               </span>
             </p>
             
-            {/* Feature highlights */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <div className="flex items-center gap-2 px-4 py-2 bg-card/50 rounded-full border border-border/50 backdrop-blur-sm">
-                <span className="text-green-400">✓</span>
-                <span className="text-sm text-muted-foreground">ATS Optimization</span>
+            {/* Premium feature highlights */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              <div className="flex items-center gap-3 px-5 py-3 bg-gradient-card rounded-full border border-border-accent backdrop-blur-sm hover-lift">
+                <div className="w-2 h-2 bg-primary rounded-full animate-subtle-pulse"></div>
+                <span className="text-sm font-medium text-foreground">ATS Optimization</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-card/50 rounded-full border border-border/50 backdrop-blur-sm">
-                <span className="text-green-400">✓</span>
-                <span className="text-sm text-muted-foreground">Keyword Analysis</span>
+              <div className="flex items-center gap-3 px-5 py-3 bg-gradient-card rounded-full border border-border-accent backdrop-blur-sm hover-lift">
+                <div className="w-2 h-2 bg-secondary rounded-full animate-subtle-pulse"></div>
+                <span className="text-sm font-medium text-foreground">Keyword Analysis</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-card/50 rounded-full border border-border/50 backdrop-blur-sm">
-                <span className="text-green-400">✓</span>
-                <span className="text-sm text-muted-foreground">Real-time Feedback</span>
+              <div className="flex items-center gap-3 px-5 py-3 bg-gradient-card rounded-full border border-border-accent backdrop-blur-sm hover-lift">
+                <div className="w-2 h-2 bg-primary rounded-full animate-subtle-pulse"></div>
+                <span className="text-sm font-medium text-foreground">Real-time Feedback</span>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-card/50 rounded-full border border-border/50 backdrop-blur-sm">
-                <span className="text-green-400">✓</span>
-                <span className="text-sm text-muted-foreground">Developer-Focused</span>
+              <div className="flex items-center gap-3 px-5 py-3 bg-gradient-card rounded-full border border-border-accent backdrop-blur-sm hover-lift">
+                <div className="w-2 h-2 bg-secondary rounded-full animate-subtle-pulse"></div>
+                <span className="text-sm font-medium text-foreground">Developer-Focused</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-10">
           {/* Upload Section */}
-          <div className="space-y-6">
-            <Card className="relative overflow-hidden bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border/50 shadow-large hover:shadow-glow transition-all duration-500">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <Card className="relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-28 h-28 bg-primary/8 rounded-full blur-3xl animate-gentle-float"></div>
               <CardHeader className="relative z-10">
-                <CardTitle className="flex items-center gap-3 text-xl">
-                  <div className="p-2 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg">
-                    <FileText className="h-6 w-6 text-primary" />
+                <CardTitle className="flex items-center gap-4 text-xl">
+                  <div className="p-3 bg-gradient-primary rounded-lg shadow-glow">
+                    <FileText className="h-6 w-6 text-primary-foreground" />
                   </div>
-                  <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                    📄 Upload Resume
+                  <span className="font-heading text-foreground">
+                    Upload Resume
                   </span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="relative z-10">
                 <UploadZone onFileSelect={handleFileUpload} />
-                {uploadedFile && <div className="mt-6 p-4 bg-gradient-to-r from-emerald-500/10 to-emerald-600/5 rounded-xl border border-emerald-500/20 backdrop-blur-sm">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-emerald-500/20 rounded-lg">
-                        <FileText className="h-5 w-5 text-emerald-400" />
+                {uploadedFile && <div className="mt-6 p-5 bg-gradient-to-r from-primary/10 to-secondary/8 rounded-xl border border-border-accent backdrop-blur-sm animate-scale-in">
+                    <div className="flex items-center gap-4">
+                      <div className="p-2.5 bg-gradient-primary rounded-lg shadow-medium">
+                        <FileText className="h-5 w-5 text-primary-foreground" />
                       </div>
                       <div className="flex-1">
-                        <span className="text-sm font-bold text-emerald-100 block">
-                          ✅ {uploadedFile.name}
+                        <span className="text-sm font-bold text-foreground block">
+                          {uploadedFile.name}
                         </span>
-                        <span className="text-xs text-emerald-300/80">
+                        <span className="text-xs text-muted-foreground">
                           Ready for analysis
                         </span>
                       </div>
-                      <Badge variant="secondary" className="bg-emerald-500/20 text-emerald-300 border-emerald-500/30">
+                      <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30 font-semibold">
                         {(uploadedFile.size / (1024 * 1024)).toFixed(2)} MB
                       </Badge>
                     </div>
@@ -368,53 +368,50 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="relative overflow-hidden bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border/50 shadow-large hover:shadow-glow transition-all duration-500">
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
+            <Card className="relative overflow-hidden group">
+              <div className="absolute bottom-0 left-0 w-28 h-28 bg-secondary/8 rounded-full blur-3xl animate-gentle-float" style={{ animationDelay: '1s' }}></div>
               <CardHeader className="relative z-10">
-                <CardTitle className="flex items-center gap-3 text-xl">
-                  <div className="p-2 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-lg">
-                    <Target className="h-6 w-6 text-secondary" />
+                <CardTitle className="flex items-center gap-4 text-xl">
+                  <div className="p-3 bg-gradient-to-r from-secondary to-primary rounded-lg shadow-glow">
+                    <Target className="h-6 w-6 text-primary-foreground" />
                   </div>
-                  <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                    🎯 Job Description
+                  <span className="font-heading text-foreground">
+                    Job Description
                   </span>
                 </CardTitle>
               </CardHeader>
               <CardContent className="relative z-10">
                 <Textarea 
-                  placeholder="🔍 Paste the job description here for intelligent keyword analysis and ATS optimization..." 
+                  placeholder="Paste the job description here for intelligent keyword analysis and ATS optimization..." 
                   value={jobDescription} 
                   onChange={e => setJobDescription(e.target.value)} 
-                  className="min-h-[200px] resize-none bg-muted/30 border-border/50 backdrop-blur-sm focus:bg-muted/50 transition-all duration-300" 
+                  className="min-h-[200px] resize-none bg-muted/20 border-border-accent backdrop-blur-sm focus:bg-muted/30 focus:border-primary/50 transition-all duration-300 text-foreground placeholder:text-muted-foreground" 
                 />
                 <div className="mt-6 flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <p className="text-sm text-muted-foreground font-medium">
-                      📝 {jobDescription.length}/5000 characters
+                      {jobDescription.length}/5000 characters
                     </p>
                     {jobDescription.length > 0 && (
-                      <div className="flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                        <span className="text-xs font-medium text-primary">Ready to analyze</span>
+                      <div className="flex items-center gap-2 px-3 py-1.5 bg-gradient-subtle rounded-full border border-border-accent">
+                        <div className="w-2 h-2 bg-primary rounded-full animate-subtle-pulse"></div>
+                        <span className="text-xs font-semibold text-primary">Ready to analyze</span>
                       </div>
                     )}
                   </div>
                   <Button 
                     onClick={handleAnalyze} 
                     disabled={!uploadedFile || !jobDescription.trim() || isAnalyzing} 
-                    className="relative overflow-hidden bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 hover:shadow-glow transition-all duration-300 transform hover:scale-105 disabled:hover:scale-100"
+                    className="relative overflow-hidden"
+                    size="lg"
                   >
                     {isAnalyzing ? <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2" />
-                        <span className="animate-pulse">Analyzing...</span>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-foreground mr-2" />
+                        <span>Analyzing...</span>
                       </> : <>
-                        <Zap className="h-5 w-5 mr-2 animate-pulse" />
-                        <span className="font-semibold">🚀 Analyze Resume</span>
+                        <Zap className="h-5 w-5 mr-2 animate-subtle-pulse" />
+                        <span>Analyze Resume</span>
                       </>}
-                    {/* Animated background effect */}
-                    {!isAnalyzing && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 to-primary/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                    )}
                   </Button>
                 </div>
               </CardContent>
@@ -422,65 +419,65 @@ const Index = () => {
           </div>
 
           {/* Results Section */}
-          <div className="space-y-6">
+          <div className="space-y-8 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             {analysisResults ? <>
                 {/* Overall Score */}
-                <Card className="relative overflow-hidden bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-sm border-border/50 shadow-glow">
-                  {/* Animated background elements */}
-                  <div className="absolute inset-0">
-                    <div className="absolute top-0 left-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <Card className="relative overflow-hidden group shadow-glow-strong">
+                  {/* Elegant background elements */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-0 left-0 w-32 h-32 bg-primary/12 rounded-full blur-3xl animate-gentle-float"></div>
+                    <div className="absolute bottom-0 right-0 w-28 h-28 bg-secondary/10 rounded-full blur-3xl animate-gentle-float" style={{ animationDelay: '2s' }}></div>
                   </div>
                   
-                  <CardHeader className="relative z-10 text-center py-8">
-                    <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full border border-primary/30">
-                      <Brain className="h-5 w-5 text-primary animate-pulse" />
-                      <span className="text-sm font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  <CardHeader className="relative z-10 text-center py-10">
+                    <div className="inline-flex items-center gap-3 mb-6 px-5 py-2.5 bg-gradient-subtle rounded-full border border-border-accent backdrop-blur-sm">
+                      <Brain className="h-5 w-5 text-primary animate-subtle-pulse" />
+                      <span className="text-sm font-bold bg-gradient-primary bg-clip-text text-transparent">
                         AI Analysis Complete
                       </span>
                     </div>
                     
-                    <CardTitle className="text-3xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                      🎯 Overall Score
+                    <CardTitle className="text-3xl font-bold mb-8 font-heading text-foreground">
+                      Overall Score
                     </CardTitle>
                     
-                    <div className="relative inline-block">
-                      <div className="text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-pulse mb-2">
+                    <div className="relative inline-block mb-6">
+                      <div className="text-8xl font-bold font-heading bg-gradient-primary bg-clip-text text-transparent animate-gradient-shift">
                         {analysisResults.overallScore}%
                       </div>
 
                       {analysisResults.overallScore >= 95 && (
-                        <div className="absolute -top-2 -right-2">
-                          <div className="px-2 py-1 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold rounded-full animate-pulse">
+                        <div className="absolute -top-3 -right-3">
+                          <div className="px-3 py-1.5 bg-gradient-to-r from-secondary to-primary text-primary-foreground text-xs font-bold rounded-full animate-subtle-pulse shadow-glow">
                             Free Limit
                           </div>
                         </div>
                       )}
-                      <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl opacity-50"></div>
+                      <div className="absolute -inset-6 bg-gradient-primary rounded-full blur-2xl opacity-20 animate-golden-glow"></div>
                     </div>
                     
-                    <div className="flex items-center justify-center gap-3 mt-6 px-4 py-2 bg-muted/30 rounded-full border border-border/30 backdrop-blur-sm">
+                    <div className="flex items-center justify-center gap-3 mb-6 px-5 py-2.5 bg-gradient-card rounded-full border border-border-accent backdrop-blur-sm">
                       <Clock className="h-4 w-4 text-primary" />
                       <span className="text-sm font-medium text-muted-foreground">
-                        ⚡ Analyzed in {analysisResults.processingTime.toFixed(1)}s
+                        Analyzed in {analysisResults.processingTime.toFixed(1)}s
                       </span>
                     </div>
                     
                     {/* Performance badge */}
-                    <div className="mt-4">
+                    <div>
                       {analysisResults.overallScore >= 80 ? (
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full border border-emerald-500/30">
-                          <span className="text-lg">🏆</span>
+                        <div className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-primary/20 to-secondary/15 text-primary rounded-full border border-primary/30 shadow-glow">
+                          <span className="text-xl">🏆</span>
                           <span className="font-bold">Excellent Resume!</span>
                         </div>
                       ) : analysisResults.overallScore >= 60 ? (
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 text-amber-300 rounded-full border border-amber-500/30">
-                          <span className="text-lg">💪</span>
+                        <div className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-secondary/20 to-primary/15 text-secondary rounded-full border border-secondary/30">
+                          <span className="text-xl">💪</span>
                           <span className="font-bold">Good Progress!</span>
                         </div>
                       ) : (
-                        <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30">
-                          <span className="text-lg">🚀</span>
+                        <div className="inline-flex items-center gap-3 px-5 py-3 bg-gradient-card text-foreground rounded-full border border-border-accent">
+                          <span className="text-xl">🚀</span>
                           <span className="font-bold">Room to Improve!</span>
                         </div>
                       )}
@@ -496,15 +493,15 @@ const Index = () => {
                 </div>
 
                 {/* Missing Keywords */}
-                {analysisResults.keywordGaps.length > 0 && <Card className="relative overflow-hidden bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border/50 shadow-large hover:shadow-glow transition-all duration-500">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-3xl"></div>
+                {analysisResults.keywordGaps.length > 0 && <Card className="relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-secondary/8 rounded-full blur-3xl animate-gentle-float"></div>
                     <CardHeader className="relative z-10">
-                      <CardTitle className="flex items-center gap-3 text-xl">
-                        <div className="p-2 bg-gradient-to-br from-amber-500/20 to-amber-600/20 rounded-lg">
-                          <Target className="h-6 w-6 text-amber-400" />
+                      <CardTitle className="flex items-center gap-4 text-xl">
+                        <div className="p-3 bg-gradient-to-r from-secondary/80 to-primary/80 rounded-lg shadow-glow">
+                          <Target className="h-6 w-6 text-primary-foreground" />
                         </div>
-                        <span className="bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                          🔍 Missing Keywords
+                        <span className="font-heading text-foreground">
+                          Missing Keywords
                         </span>
                       </CardTitle>
                       <p className="text-sm text-muted-foreground mt-2">
@@ -512,19 +509,19 @@ const Index = () => {
                       </p>
                     </CardHeader>
                     <CardContent className="relative z-10">
-                      <div className="flex flex-wrap gap-3">
+                      <div className="flex flex-wrap gap-3 mb-4">
                         {analysisResults.keywordGaps.map((keyword, index) => (
                           <Badge 
                             key={index} 
                             variant="outline" 
-                            className="px-3 py-1.5 text-sm font-medium bg-gradient-to-r from-amber-500/10 to-amber-600/5 border-amber-500/30 text-amber-200 hover:from-amber-500/20 hover:to-amber-600/10 hover:scale-105 transition-all duration-300 cursor-pointer"
+                            className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-secondary/15 to-primary/10 border-border-accent text-foreground hover:from-secondary/25 hover:to-primary/15 hover-scale transition-all duration-300 cursor-pointer"
                           >
-                            💡 {keyword}
+                            {keyword}
                           </Badge>
                         ))}
                       </div>
-                      <div className="mt-4 p-3 bg-amber-500/10 rounded-lg border border-amber-500/20">
-                        <p className="text-xs text-amber-300 font-medium">
+                      <div className="p-4 bg-gradient-subtle rounded-lg border border-border-accent">
+                        <p className="text-sm text-muted-foreground font-medium">
                           💡 Pro Tip: Consider adding these skills to your resume if you have experience with them
                         </p>
                       </div>
@@ -532,54 +529,53 @@ const Index = () => {
                   </Card>}
 
                 {/* Feedback */}
-                <Card className="relative overflow-hidden bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border/50 shadow-large">
-                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+                <Card className="relative overflow-hidden group">
+                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/8 rounded-full blur-3xl animate-gentle-float"></div>
                   <CardContent className="relative z-10 pt-6">
                     <FeedbackList items={analysisResults.feedback} />
                   </CardContent>
                 </Card>
 
-
                 {/* Premium Upgrade Component */}
                 <PremiumUpgrade currentScore={analysisResults.overallScore} className="mt-8" />
 
-              </> : <Card className="relative overflow-hidden bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border-border/50 shadow-large">
-                {/* Animated background elements */}
-                <div className="absolute inset-0">
-                  <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-                  <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+              </> : <Card className="relative overflow-hidden group">
+                {/* Elegant background elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-1/4 left-1/4 w-28 h-28 bg-primary/8 rounded-full blur-3xl animate-gentle-float"></div>
+                  <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-secondary/6 rounded-full blur-3xl animate-gentle-float" style={{ animationDelay: '2s' }}></div>
                 </div>
                 
-                <CardContent className="relative z-10 py-20 text-center">
-                  <div className="relative inline-block mb-8">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-xl"></div>
-                    <div className="relative w-20 h-20 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center border border-primary/30 backdrop-blur-sm">
-                      <Brain className="h-10 w-10 text-primary animate-pulse" />
+                <CardContent className="relative z-10 py-24 text-center">
+                  <div className="relative inline-block mb-10">
+                    <div className="absolute inset-0 bg-gradient-primary rounded-full blur-xl opacity-20"></div>
+                    <div className="relative w-24 h-24 bg-gradient-card rounded-full flex items-center justify-center border border-border-accent backdrop-blur-sm shadow-glow">
+                      <Brain className="h-12 w-12 text-primary animate-subtle-pulse" />
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text">
-                    🚀 Ready to Analyze
+                  <h3 className="text-3xl font-bold mb-6 font-heading text-foreground">
+                    Ready to Analyze
                   </h3>
-                  <p className="text-muted-foreground text-lg max-w-md mx-auto mb-8">
+                  <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-12 leading-relaxed">
                     Upload your resume and paste a job description to get instant AI-powered feedback
                   </p>
                   
-                  {/* Step indicators */}
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
-                    <div className="flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
-                      <span className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-xs">1</span>
-                      <span className="text-muted-foreground">Upload Resume</span>
+                  {/* Premium step indicators */}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
+                    <div className="flex items-center gap-3 px-5 py-3 bg-gradient-subtle rounded-full border border-border-accent hover-lift">
+                      <span className="w-7 h-7 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xs shadow-medium">1</span>
+                      <span className="text-foreground font-medium">Upload Resume</span>
                     </div>
                     <div className="hidden sm:block text-muted-foreground">→</div>
-                    <div className="flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full border border-secondary/20">
-                      <span className="w-6 h-6 bg-secondary/20 rounded-full flex items-center justify-center text-secondary font-bold text-xs">2</span>
-                      <span className="text-muted-foreground">Add Job Description</span>
+                    <div className="flex items-center gap-3 px-5 py-3 bg-gradient-subtle rounded-full border border-border-accent hover-lift">
+                      <span className="w-7 h-7 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xs shadow-medium">2</span>
+                      <span className="text-foreground font-medium">Add Job Description</span>
                     </div>
                     <div className="hidden sm:block text-muted-foreground">→</div>
-                    <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20">
-                      <span className="w-6 h-6 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full flex items-center justify-center text-primary font-bold text-xs">3</span>
-                      <span className="text-muted-foreground">Get AI Analysis</span>
+                    <div className="flex items-center gap-3 px-5 py-3 bg-gradient-subtle rounded-full border border-border-accent hover-lift">
+                      <span className="w-7 h-7 bg-gradient-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xs shadow-medium">3</span>
+                      <span className="text-foreground font-medium">Get AI Analysis</span>
                     </div>
                   </div>
                 </CardContent>
